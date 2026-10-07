@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f7f8;
+    color: #24323a;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+    padding: 2rem 1rem;
+    background-color: #087f8c;
+    color: #ffffff;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 0.35rem 0 0;
+}
+
+main {
+    width: min(100% - 2rem, 700px);
+    margin: 2rem auto;
+}
+
+section {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 12px rgb(36 50 58 / 8%);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+#note-form {
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+select,
+button {
+    min-height: 2.75rem;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #cbd5d9;
+    border-radius: 6px;
+    font: inherit;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+    outline: 3px solid rgb(8 127 140 / 25%);
+    outline-offset: 2px;
+}
+
+button {
+    border-color: #087f8c;
+    background-color: #087f8c;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: #066873;
+}
+
+#error-message {
+    color: #b42318;
+}
+
+#search-notes {
+    width: 100%;
+}
+
+#note-count {
+    color: #5b6b72;
+}
+
+#notes-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#notes-list li {
+    padding: 1rem;
+    border: 1px solid #e1e8eb;
+    border-left: 5px solid #087f8c;
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow-wrap: anywhere;
+}
+
+#notes-list li.category-personal {
+    border-left-color: #0f9d8a;
+}
+
+#notes-list li.category-work {
+    border-left-color: #8f2d2d;
+}
+
+#notes-list li.category-study {
+    border-left-color: #2878b8;
+}
+
+footer {
+    padding: 1rem;
+    color: #5b6b72;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin-top: 1rem;
+    }
+
+    section {
+        padding: 1.25rem;
+    }
+
+    #note-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
