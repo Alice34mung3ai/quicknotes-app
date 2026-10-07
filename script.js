@@ -2,6 +2,7 @@ const noteForm = document.querySelector("#note-form");
 const noteInput = document.querySelector("#note-input");
 const noteCategory = document.querySelector("#note-category");
 const notesList = document.querySelector("#notes-list");
+const clearAllButton = document.querySelector("#clear-all");
 
 const notes = [];
 let nextNoteId = 1;
@@ -24,6 +25,17 @@ function renderNotes() {
         const deleteButton = document.createElement("button");
         deleteButton.type = "button";
         deleteButton.textContent = "Delete";
+
+        deleteButton.addEventListener("click", () => {
+            const noteIndex = notes.findIndex(
+                (item) => item.id === note.id
+            );
+
+            if (noteIndex !== -1) {
+                notes.splice(noteIndex, 1);
+                renderNotes();
+            }
+        });
 
         noteCard.append(
             noteText,
@@ -51,4 +63,11 @@ noteForm.addEventListener("submit", (event) => {
     noteInput.value = "";
 
     renderNotes();
+});
+
+clearAllButton.addEventListener("click", () => {
+    if (confirm("Delete all notes?")) {
+        notes.length = 0;
+        renderNotes();
+    }
 });
